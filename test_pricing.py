@@ -25,5 +25,13 @@ class PricingTest(unittest.TestCase):
         self.assertEqual(total([100, 250]), 350)
 
 
+
+class LoyaltyTest(unittest.TestCase):
+    def test_one_point_per_whole_dollar(self):
+        from pricing import loyalty_points
+
+        self.assertEqual(loyalty_points(1999), 19)
+
+
 if __name__ == "__main__":
     unittest.main()

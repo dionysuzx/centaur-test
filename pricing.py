@@ -28,3 +28,8 @@ def apply_coupon(price_cents: int, code: str) -> int:
     if code == "SAVE20":
         return apply_discount(price_cents, 20)
     raise ValueError(f"Unknown coupon code: {code}")
+
+
+def loyalty_points(total_cents: int) -> int:
+    """Loyalty points earned for an order: one point per whole dollar spent."""
+    return total_cents // 10
