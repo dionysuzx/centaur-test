@@ -28,3 +28,9 @@ def apply_coupon(price_cents: int, code: str) -> int:
     if code == "SAVE20":
         return apply_discount(price_cents, 20)
     raise ValueError(f"Unknown coupon code: {code}")
+
+
+def split_bill(total_cents: int, people: int) -> list[int]:
+    """Split a bill evenly across people, in cents; the shares sum to the total."""
+    share = total_cents // people
+    return [share] * people
