@@ -19,3 +19,12 @@ def total_with_tax(items: list[int], tax_percent: int = 8) -> int:
 def total_with_shipping(items: list[int], shipping_cents: int = 500) -> int:
     """Sum item prices plus flat shipping, in cents."""
     return total(items) + shipping_cents
+
+
+def apply_coupon(price_cents: int, code: str) -> int:
+    """Apply a coupon code to a price in cents."""
+    if code == "SAVE10":
+        return apply_discount(price_cents, 10)
+    if code == "SAVE20":
+        return apply_discount(price_cents, 20)
+    return price_cents
