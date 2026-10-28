@@ -8,3 +8,9 @@ def apply_discount(price_cents: int, percent: int) -> int:
 def total(items: list[int]) -> int:
     """Sum item prices in cents."""
     return sum(items)
+
+
+def total_with_tax(items: list[int], tax_percent: int = 8) -> int:
+    """Sum item prices plus tax, rounded down to whole cents."""
+    subtotal = total(items)
+    return subtotal + subtotal * tax_percent // 100
