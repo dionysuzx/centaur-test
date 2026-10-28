@@ -14,3 +14,8 @@ def total_with_tax(items: list[int], tax_percent: int = 8) -> int:
     """Sum item prices plus tax, rounded down to whole cents."""
     subtotal = total(items)
     return subtotal + subtotal * tax_percent // 100
+
+
+def total_with_shipping(items: list[int], shipping_cents: int = 500) -> int:
+    """Sum item prices plus flat shipping, in cents."""
+    return total(items) + shipping_cents
