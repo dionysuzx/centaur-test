@@ -8,3 +8,8 @@ def apply_discount(price_cents: int, percent: int) -> int:
 def total(items: list[int]) -> int:
     """Sum item prices in cents."""
     return sum(items)
+
+
+def total_with_shipping(items: list[int], shipping_cents: int = 500) -> int:
+    """Sum item prices plus flat shipping, in cents."""
+    return total(items) + shipping_cents
