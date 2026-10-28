@@ -22,9 +22,9 @@ def total_with_shipping(items: list[int], shipping_cents: int = 500) -> int:
 
 
 def apply_coupon(price_cents: int, code: str) -> int:
-    """Apply a coupon code to a price in cents."""
+    """Apply a coupon code to a price in cents; raise ValueError for unknown codes."""
     if code == "SAVE10":
         return apply_discount(price_cents, 10)
     if code == "SAVE20":
         return apply_discount(price_cents, 20)
-    return price_cents
+    raise ValueError(f"Unknown coupon code: {code}")
